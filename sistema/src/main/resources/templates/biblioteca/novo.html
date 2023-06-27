@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo livro</title>
+    <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+</head>
+<body>
+    <h1>Novo Livro</h1>
+    
+
+    <form action="#" th:action="@{/biblioteca/salvar}" th:object="${biblioteca}" method="post">
+        <label for="nome">Nome</label><br>
+        <input type="text" id="nome" th:field="*{nome}">
+        <label for="autor">Autor</label><br>
+        <input type="text" id="autor" th:field="*{autor}">
+        <button type="submit">Inserir</button><br>
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+    </form>
+</body>
+</html>

@@ -5,21 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
     <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+    <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+    <script src="/resources/assets/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Livros: </h1>
+    <div class="espacamento">
+        <h1 class="centralizar">Livros </h1>
 
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Autor</th>
-        </tr>
-        <tr th:each="livro : ${livros}">
-            <td th:text="${livro.id}"></td>
-            <td th:text="${livro.nome}"></td>
-            <td th:text="${livro.autor}"></td>
-        </tr>
-    </table>
-</body>
+        <div style="float: right; margin: 10px;">
+            <a th:href="@{/biblioteca/novo}"> <button type="button" class="btn btn-primary">Novo Professor</button></a>       
+        </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Nome</th>
+                        <th class="text-center">Autor</th>
+                        <th class="text-center">Editora</th>
+                        <th class="text-center">Ano</th>
+                        <th class="text-center">Páginas</th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="livro : ${livros}">
+                        <td class="text-center" th:text="${livro.id}"></td>
+                        <td class="text-center" th:text="${livro.nome}"></td>
+                        <td class="text-center" th:text="${livro.autor}"></td>
+                        <td class="text-center" th:text="${livro.editora}"></td>
+                        <td class="text-center" th:text="${livro.ano}"></td>
+                        <td class="text-center" th:text="${livro.paginas}"></td>
+                        <!-- <td><a th:href="@{/professor/alterar/{id}(id=${professor.id})}">Editar</a></td>
+                        <td><a th:href="@{/professor/remover/{id}(id=${professor.id})}">Remover</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>
