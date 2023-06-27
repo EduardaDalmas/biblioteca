@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+    <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+    <script src="/resources/assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="espacamento">
+        <h1 class="centralizar">Home</h1>
+    
+        <div class="row centralizar-2">
+            <div class="col">
+                <a th:href="@{/biblioteca/listar}">
+                <div class="card">
+                  <img src="https://classic.exame.com/wp-content/uploads/2020/11/livros-2.jpg?quality=70&strip=info&w=1024" class="card-img-top img-card" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Livros</h5>
+                  </div>
+                </div>
+                </a>
+            </div>
+            <div class="col">
+                <a th:href="@{/pessoas/listar}">
+                <div class="card">
+                  <img src="https://acigweb.com.br/wp-content/uploads/2020/05/artigo_102637.jpg" class="card-img-top img-card" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Pessoas</h5>
+                  </div>
+                </div>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
