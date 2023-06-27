@@ -37,8 +37,8 @@
                     <td class="text-center" th:text="${livro.editora}"></td>
                     <td class="text-center" th:text="${livro.ano}"></td>
                     <td class="text-center" th:text="${livro.paginas}"></td>
-                    <!-- <td><a th:href="@{/professor/alterar/{id}(id=${professor.id})}">Editar</a></td>
-                    <td><a th:href="@{/professor/remover/{id}(id=${professor.id})}">Remover</a></td> -->
+                    <td class="text-center"><a th:href="@{/biblioteca/alterar/{id}(id=${livro.id})}"><button type="button" class="btn btn-warning">Editar</button></a></td>
+                    <td class="text-center"><a th:href="@{/biblioteca/remover/{id}(id=${livro.id})}"><button type="button" class="btn btn-danger">Remover</button></a></td>
                 </tr>
             </tbody>
         </table>

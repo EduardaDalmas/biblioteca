@@ -1,5 +1,7 @@
 package com.biblioteca.sistema.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +33,20 @@ public class BibliotecaController {
     @GetMapping("/novo")
     public String novo(Biblioteca biblioteca) {
         return "/biblioteca/novo";
+    }
+
+    @GetMapping("/remover/{id}")
+    public String remover(@PathVariable("id") int id) {
+        Optional<Biblioteca> biblioteca = bibliotecaRepository.findById(id);
+        bibliotecaRepository.delete(biblioteca.orElse(null));
+        return "redirect:/biblioteca/listar";
+    }
+
+    @GetMapping("/alterar/{id}")
+    public String alterar(@PathVariable("id") int id, Model model) {
+        Optional<Biblioteca> biblioteca = bibliotecaRepository.findById(id);
+        model.addAttribute("biblioteca", biblioteca.orElse(null));
+        return "biblioteca/alterar";
     }
 
     @PostMapping("/salvar")
