@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas</title>
+    <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+    <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+    <script src="/resources/assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="espacamento">
+        <h1 class="centralizar">Pessoas </h1>
+
+        <div style="float: right; margin: 10px;">
+            <a th:href="@{/pessoas/novo}"> <button type="button" class="btn btn-primary">Nova pessoa</button></a>       
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Endereço</th>
+                    <th class="text-center">Telefone</th>
+                    <th class="text-center">E-mail</th>
+                    <th class="text-center">Data de Nascimento</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="pessoa : ${pessoas}">
+                    <td class="text-center" th:text="${pessoa.id}"></td>
+                    <td class="text-center" th:text="${pessoa.nome}"></td>
+                    <td class="text-center" th:text="${pessoa.endereco}"></td>
+                    <td class="text-center" th:text="${pessoa.telefone}"></td>
+                    <td class="text-center" th:text="${pessoa.email}"></td>
+                    <td class="text-center" th:text="${pessoa.nascimento}"></td>
+                    <td class="text-center"><a th:href="@{/pessoas/alterar/{id}(id=${pessoa.id})}"><button type="button" class="btn btn-warning">Editar</button></a></td>
+                    <td class="text-center"><a th:href="@{/pessoas/remover/{id}(id=${pessoa.id})}"><button type="button" class="btn btn-danger">Remover</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
