@@ -5,18 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo livro</title>
     <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+    <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+    <script src="/resources/assets/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Novo Livro</h1>
+    <div class="espacamento">
+        <h1>Novo Livro</h1>
     
 
-    <form action="#" th:action="@{/biblioteca/salvar}" th:object="${biblioteca}" method="post">
-        <label for="nome">Nome</label><br>
-        <input type="text" id="nome" th:field="*{nome}">
-        <label for="autor">Autor</label><br>
-        <input type="text" id="autor" th:field="*{autor}">
-        <button type="submit">Inserir</button><br>
-        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
-    </form>
+        <form action="#" th:action="@{/biblioteca/salvar}" th:object="${biblioteca}" method="post">
+            <div class="input-form">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text"id="nome" th:field="*{nome}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="autor" class="form-label">Autor</label>
+                <input type="text"id="autor" th:field="*{autor}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="editora" class="form-label">Editora</label>
+                <input type="text"id="editora" th:field="*{editora}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="ano" class="form-label">ano</label>
+                <input type="number" id="ano" th:field="*{ano}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="paginas" class="form-label">Páginas</label>
+                <input type="number" id="paginas" th:field="*{paginas}" class="form-control">
+            </div>
+            <button type="submit" class="botao btn btn-success">Inserir</button>
+            <!-- <button type="submit">Inserir</button><br>
+            <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span> -->
+        </form>
+    </div>
 </body>
 </html>

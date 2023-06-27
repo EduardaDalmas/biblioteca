@@ -30,7 +30,7 @@ public class BibliotecaController {
 
     @GetMapping("/novo")
     public String novo(Biblioteca biblioteca) {
-        return "/professor/novo";
+        return "/biblioteca/novo";
     }
 
     @PostMapping("/salvar")

@@ -1,5 +1,5 @@
 body {
-    background-color: red;
+    background-color: white;
 }
 
 h1, td, th, a, label, input {
@@ -21,6 +21,16 @@ td {
 table { 
     border: 1px solid gray;
     margin: 20px;
+}
+
+.input-form {
+    width: 30%;
+    margin-left: 10px;
+}
+
+.botao {
+    margin-left: 10px;
+    margin-top: 30px;
 }
 
 .espacamento {

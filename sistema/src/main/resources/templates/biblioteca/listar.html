@@ -16,32 +16,32 @@
             <a th:href="@{/biblioteca/novo}"> <button type="button" class="btn btn-primary">Novo Professor</button></a>       
         </div>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="text-center">Id</th>
-                        <th class="text-center">Nome</th>
-                        <th class="text-center">Autor</th>
-                        <th class="text-center">Editora</th>
-                        <th class="text-center">Ano</th>
-                        <th class="text-center">Páginas</th>
-                        <th class="text-center"></th>
-                        <th class="text-center"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="livro : ${livros}">
-                        <td class="text-center" th:text="${livro.id}"></td>
-                        <td class="text-center" th:text="${livro.nome}"></td>
-                        <td class="text-center" th:text="${livro.autor}"></td>
-                        <td class="text-center" th:text="${livro.editora}"></td>
-                        <td class="text-center" th:text="${livro.ano}"></td>
-                        <td class="text-center" th:text="${livro.paginas}"></td>
-                        <!-- <td><a th:href="@{/professor/alterar/{id}(id=${professor.id})}">Editar</a></td>
-                        <td><a th:href="@{/professor/remover/{id}(id=${professor.id})}">Remover</a></td> -->
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Autor</th>
+                    <th class="text-center">Editora</th>
+                    <th class="text-center">Ano</th>
+                    <th class="text-center">Páginas</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="livro : ${livros}">
+                    <td class="text-center" th:text="${livro.id}"></td>
+                    <td class="text-center" th:text="${livro.nome}"></td>
+                    <td class="text-center" th:text="${livro.autor}"></td>
+                    <td class="text-center" th:text="${livro.editora}"></td>
+                    <td class="text-center" th:text="${livro.ano}"></td>
+                    <td class="text-center" th:text="${livro.paginas}"></td>
+                    <!-- <td><a th:href="@{/professor/alterar/{id}(id=${professor.id})}">Editar</a></td>
+                    <td><a th:href="@{/professor/remover/{id}(id=${professor.id})}">Remover</a></td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>
