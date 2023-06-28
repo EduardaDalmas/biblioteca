@@ -9,9 +9,9 @@
     <script src="/resources/assets/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <div th:replace="components/header :: header"></div>
     <div class="espacamento">
-        <h1>ALterar Livro</h1>
-    
+        <h1>Alterar Livro</h1>
 
         <form action="#" th:action="@{/biblioteca/salvar}" th:object="${biblioteca}" method="post">
             <input type="hidden" th:field="*{id}">

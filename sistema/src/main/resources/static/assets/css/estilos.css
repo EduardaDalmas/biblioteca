@@ -126,3 +126,18 @@ h1 {
     /* background-image: linear-gradient(to right, #F8E356 , #FF4F8B, #E3B1F6); */
     background-image: linear-gradient(to right, #D3F5CF , #A8DBFA, #625ee2c0);
 }
+
+body::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+    background: #625ee2c0;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #625ee2c0; /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #625ee2c0; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid white; /* creates padding around scroll thumb */
+  }

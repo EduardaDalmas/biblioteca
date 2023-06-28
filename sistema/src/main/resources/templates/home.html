@@ -15,32 +15,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg menu">
-          <a class="navbar-brand" href="#"><img src="/resources/assets/imgs/logo.png" class="logo"/></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse itens-menu" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto item-menu itens-menu align-right">
-                  <li class="nav-item item-menu">
-                      <a class="item-menu" th:href="@{/home}">Home</a>
-                  </li>
-                  <li class="nav-item item-menu">
-                      <a class="item-menu" th:href="@{/biblioteca/listar}">Biblioteca</a>
-                  </li>
-                  <li class="nav-item item-menu">
-                      <a class="item-menu" href="#">Retiradas</a>
-                  </li>
-                  <li class="nav-item item-menu">
-                      <a class="item-menu" th:href="@{/pessoas/listar}">Usuários</a>
-                  </li>
-              </ul>
-          </div>
-      </nav>
-  </header>
+    <div th:replace="components/header :: header"></div>
   
-
   <div style="margin: 20px;" class="row box-home">
       <div class="card item-home" style="width: 15rem;">
         <a th:href="@{/biblioteca/listar}">
