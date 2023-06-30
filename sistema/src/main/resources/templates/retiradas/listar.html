@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotecando</title>
+    <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+    <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+    <script src="/resources/assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div th:replace="components/header :: header"></div>
+    <div class="espacamento">
+        <h1 class="centralizar">Retiradas </h1>
+
+        <div style="float: right; margin: 10px;">
+            <a th:href="@{/retiradas/novo}"> <button type="button" class="btn btn-primary">Nova retirada</button></a>       
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Data de retirada</th>
+                    <th class="text-center">Data de devolução</th>
+                    <th class="text-center">Livro</th>
+                    <th class="text-center">Pessoa</th>
+                    <th class="text-center">Pagamento efetuado</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="retirada : ${retiradas}">
+                    <td class="text-center" th:text="${retirada.id}"></td>
+                    <td class="text-center" th:text="${retirada.data_retirada}"></td>
+                    <td class="text-center" th:text="${retirada.data_devolucao}"></td>
+                    <td class="text-center" th:text="${retirada.livro_id}"></td>
+                    <td class="text-center" th:text="${retirada.pessoa_id}"></td>
+                    <td class="text-center" th:text="${retirada.pagamento_efetuado}"></td>
+                    <td class="text-center"><a th:href="@{/retiradas/alterar/{id}(id=${retirada.id})}"><button type="button" class="btn btn-warning">Editar</button></a></td>
+                    <td class="text-center"><a th:href="@{/retiradas/remover/{id}(id=${retirada.id})}"><button type="button" class="btn btn-danger">Remover</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotecando</title>
+    <link rel="stylesheet" href="/resources/assets/css/estilos.css">
+    <link rel="stylesheet" href="/resources/assets/css/bootstrap.min.css">
+    <script src="/resources/assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div th:replace="components/header :: header"></div>
+    <div class="espacamento">
+        <h1>Nova Retirada</h1>
+    
+
+        <form action="#" th:action="@{/retiradas/salvar}" th:object="${retiradas}" method="post">
+            <div class="input-form">
+                <label for="pessoa_id" class="form-label">Id da pessoa</label>
+                <input type="text" id="pessoa_id" th:field="*{pessoa_id}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="livro_id" class="form-label">Id do livro</label>
+                <input type="text" id="livro_id" th:field="*{livro_id}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="data_retirada" class="form-label">Data de retirada</label>
+                <input type="text" id="data_retirada" th:field="*{data_retirada}" class="form-control">
+            </div>
+            <div class="input-form">
+                <label for="data_devolucao" class="form-label">Data de devolução</label>
+                <input type="text" id="data_devolucao" th:field="*{data_devolucao}" class="form-control">
+            </div><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pagamento_efetuado" id="pagamento_efetuado" value="true">
+                <label class="form-check-label" for="pagamento_efetuado">
+                 Pago
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pagamento_efetuado" id="pagamento_efetuado"  value="false">
+                <label class="form-check-label" for="pagamento_efetuado">
+                  Pendente
+                </label>
+            </div><br>
+            <button type="submit" class="botao btn btn-success">Inserir</button>
+            <!-- <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>  -->
+        </form>
+    </div>
+</body>
+</html>
