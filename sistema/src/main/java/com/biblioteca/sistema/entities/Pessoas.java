@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
@@ -25,6 +26,7 @@ public class Pessoas {
     private String nome;
     private String endereco;
     private String telefone;
+    @Email
     private String email;
     private Date nascimento;
     
